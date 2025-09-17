@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2025-09-17_14-10-27",
+            "content": "@@ -1,313 +1,20 @@\n-class Towel: %0A    def __init__(self, color: str, size: str):%0A        self.color: str = color %5C%0A        %0A        self.size: str = size %0A        self.wetness: int = 0%0A        %0Aprint(%22Qual a cor da sua toalha?%22)%0Acolor = input%0Atowel: Towel = Towel(%22blue%22, %22p%22)%0Aprint(f%22sua toalha %C3%A9 %7Btowel.color%7D%22)%0A%0A        %0A        %0A\n+print(%22aaaaaaaaaaa%22)\n",
+            "lines": "1"
+        },
+        {
+            "label": "2025-09-17_14-45-19",
+            "content": "class Towel: \n    def __init__(self, color: str, size: str):\n        self.color: str = color \\\n        \n        self.size: str = size \n        self.wetness: int = 0\n        \nprint(\"Qual a cor da sua toalha?\")\ncolor = input\ntowel: Towel = Towel(\"blue\", \"p\")\nprint(f\"sua toalha \u00e9 {towel.color}\")\n\n        \n        \n",
+            "lines": "14"
+        }
+    ]
+}
