@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2025-09-23_14-34-28",
+            "content": "class Towel:\n    def __init__(self, color: str, size: str):\n        self.color: str = color \n        self.size: str = size\n        self.wetness: int = 0\n    \n    def dry(self, amount: int) -> None:\n        self.wetness += amount\n        if self.wetness >= self.isMaxWetness ():\n            self.wetness = self.isMaxWetness ()\n        print (\"toalha suada\")\n\n    def isMaxWetness(self) -> int:\n        if self.size == \"P\": \n            return 10\n        if self.size == \"M\":\n            return 20\n        if self.size == \"G\":\n            return 30\n        return 0 \n\n    def __str__(self) -> str: \n        return f\"Color:{self.color}, Size:{self.size}, Wet:{self.wetness}\"\n    \n    \ndef main():\n        towel: Towel = Towel (\"\", \"\")\n        while True:\n            line: str = input ()\n            args: list[str] = line.split(\" \")\n            \n            if args [0] == \"end\":\n                 break\n            if args[0] == \"end\":\n                break\n            elif args [0] == \"new\":\n                color: str = args [1]\n                size: str = args[2]\n                towel = Towel (color, size)\n            elif args [0] == \"dry\":\n                 amount: int = int(args[1])\n                 towel.dry(amount)\n            elif args [0] == \"wow\":\n                    print(towel)\n            else:\n                print (\"erro: comando n\u00e3o encontrado\")\n#towel1: Towel = Towel(\"blue\", \"P\")\n#print(towel1)\n#towel1.dry(5)\n#towel1.dry(50)\n#print(towel1)        \n\nmain()",
+            "lines": "53"
+        }
+    ]
+}
