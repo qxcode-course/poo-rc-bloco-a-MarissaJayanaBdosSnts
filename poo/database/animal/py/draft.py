@@ -8,7 +8,11 @@ class Animal:
         if self.age == 4:
             print("Warning: {self.especies} morto ")
             return
+    self.age += inc
+    if self.age >= 4:
 
+        self.age = 4
+         print("Warning: {self.especies} morto ")
     def isDry(self):
         return self.wetness == 0
 
