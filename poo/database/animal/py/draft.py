@@ -1,61 +1,48 @@
 class Animal:
-    def __init__(self, especie: str,  sound: str): # construtor
-        self.especie: str = especie # atributos
-        self.age: int = 0
-        self.sound: str = sound
-    
-    def ageby(self, inc: int) -> None:
-        if self.age == 4:
-            print("Warning: {self.especies} morto ")
-            return
-    self.age += inc
-    if self.age >= 4:
+    def __init__(self,specie:str,sound:str):
+        self.specie:str=specie
+        self.age:int=0
+        self.sound:str=sound
 
-        self.age = 4
-         print("Warning: {self.especies} morto ")
-    def isDry(self):
-        return self.wetness == 0
+    def __str__(self)->str:
+        return f"{self.specie}:{self.age}:{self.sound}"
 
-    def wringOut(self):
-        self.wetness = 0
+    def ageBy(self, amount:int)->None:
+       self.age+=amount
+       if self.age>=4:
+           self.age=4
+           print(f"warning: {self.specie} morreu")
 
-    def isMaxWetness(self) -> int:
-        if self.size == "P": 
-            return 10
-        if self.size == "M":
-            return 20
-        if self.size == "G":
-            return 30
-        return 0 # default return
+    def makeSound(self)->str: #type: ignore
+        if self.age==0:
+            return "---"
+        if self.age==1:
+            return self.sound
+        if self.age==2:
+            return self.sound
+        if self.age==3:
+            return self.sound
+        if self.age==4:
+            return "RIP"
 
-    def __str__(self) -> str: # toString
-        return f"Cor: {self.color}, Tamanho: {self.size}, Umidade: {self.wetness}"
+def main():
+    animal:Animal=Animal("","")
+    while True:
+        line:str=input()
+        print("$"+line)
+        args:list[str]=line.split(" ")
 
-def main(): 
-    towel: Towel = Towel("", "") # 2: criar um obj com qq valor inicial
-    while True: # 3: loop infinito
-
-        line: str = input() # 4: perguntar ao usuario
-        print("$" + line) # echo
-        args: list[str] = line.split(" ") # 5: separar argumentos
-
-        if args[0] == "end":
+        if args[0]=="end":
             break
-        elif args[0] == "criar": # color size
-            color: str = args[1]
-            size: str = args[2]
-            towel = Towel(color, size)
-        elif args[0] == "seca":
-            print("sim" if towel.isDry() else "nao")
-        elif args[0] == "torcer":
-            towel.wringOut()
-        elif args[0] == "enxugar":
-            amount: int = int(args[1])
-            towel.dry(amount)
-        elif args[0] == "mostrar":
-            print(towel)
-        else: # 7: erro
-            print("fail: comando não encontrado")
-
-
-main() # passo 1
+        if args[0]=="init":
+            specie:str=args[1]
+            sound:str=args[2]
+            animal=Animal(specie,sound)
+        if args[0]=="show":
+            print(animal)
+        if args[0]=="grow":
+            amount:int=int(args[1])
+            animal.ageBy(amount)
+        if args[0]=="noise":
+            print(animal.makeSound())
+main()
