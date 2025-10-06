@@ -8,17 +8,22 @@ database: database
 expanded:
 - campanha-principal
 - bloco_b-primeiras-classes
-- bloco_b-modificadores-de-acesso
-- bloco_b-agregação-simples
 tasks:
-  animal: '{rate:100, human:1, guide:1, alone:9, study:72}'
-  carro: '{rate:100, human:1, iagen:1, guide:1, alone:8, study:53}'
-  calculadora: '{rate:100}'
-  enxugar: '{rate:100, human:1, guide:1, other:1, alone:5, study:30}'
+  toalha: '{rate:100, human:1me_ajudou_a_programar, iagen:1gemini__me_ajudou_a_entender_sobre_def,
+    guide:1sim_para_conseguir_usar_o_codespace, other:1sim_para_entender_python, alone:10,
+    study:180}'
+  animal: '{rate:100, human:1um_amigo_me_ajudou_a_compreender_a_lgica, guide:1pra_entender_a_logic,
+    alone:9, study:72}'
+  carro: '{rate:100, human:1_um_amigo_me_ajudou_a_entender_a_lgica_e_uns_pontos_do_python,
+    guide:1_programar_em_python, alone:8, study:53}'
+  calculadora: '{rate:100, human:2me_ajudou_a_entender_a_logica_do_codigo, guide:1pra_programar_python,
+    alone:8, study:89}'
+  enxugar: '{rate:100, human:sim_pois_estava_explicando_o_codigo, guide:1pois_o_professor_tava_ensinando,
+    alone:7, study:30}'
 flags:
   quests: 0
   tracks: 0
   tasks: 0
   graph: 1
   xray: 0
-index: animal
+index: enxugar
